@@ -1,0 +1,5 @@
+To make sure your first file opens, it should be named:
+    index.html
+    homepage.html
+    default.html
+
