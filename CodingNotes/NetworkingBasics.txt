@@ -1,0 +1,45 @@
+A [NETWORK] is a means of allowing clients and servers to communicate. 
+
+[CLIENTS] are devices or software that request data or services. (ex. computer, mobile phone, web broswer)
+
+The communication process starts with a request like typing in a web address.
+
+[SERVERS] are devices or software that respond to requests with data or services.
+
+Networks can connect devices physically or wirelessly and are classified by size and boundaries.
+
+A [local area network (LAN)] is the smallest. When a device is connected to a LAN, it receives an IP address, which identifies and allows it to send and receive data on the
+network. The IP address must be unique. [ROUTERS] are network devices that ensure device requests and responses go to the right place.
+
+A [wide area network (WAN)] connects multiple LANS.
+
+The internet is the global network of interconnected WANS. If requests must leave your regional WAN, they may travel across an [Internet Exchange Point (IXP)]. These are
+sometimes referred to as the "backbone" of the internet.
+
+Most networks transmit data using the [Transmission Control Protocol/Internet Protocol].
+
+When data is transmitted, we do not transmit it all at once. The data is chopped up into smaller pieces called [packets]. Each packet has a piece of the overall data, 
+informataion on the order for reassembly, and its destination. Packets can be lost or corrupted.
+
+[IPv4] is the older version of IP addresses. It is a 32-bit number with 4 segments that may contain up to 3 digits each. (ex. 142.251.32.68)
+
+[PING] The ping command sends a small packet of data to a server and measures its response. It is frequently used to check whether a server is available and responsive.
+
+[IPv6] is the newer version since we ran out of IPv4 addresses. They are 128-bits and structured as eight groups of 4 hexadecimal (0-9 then A-F) values, each group separated
+by colons.
+
+[Domain names] are aliases for IP addresses. A DNS lookup occurs and finds the server's IP address associated with the domain.
+
+[Ports] are dedicated channels on an IP address that separate network communications by type. Port numbers are appended to the IP address.
+
+[80]: Standard port for unencrypted internet communications
+[443]: Standard port for encrypted communications.
+[1443]: Used when connecting to a Microsoft SQL Server database
+
+[localhost] refers to the computer on which an application is running. You can also use 127.0.0.1
+
+192 IP addresses are usually reserved for LAN networks and the default for most routers. IP addresses that start with 10 are also reserved for LANS, though they are less common 
+on home networks. These prefixes can not be assigned to public networks like WANS or IPX.
+
+[HTTP] HyperText Transfer Protocol is the format web applications use to communicate. TCP/IP handles all the routing and packets, but the data we care about as web developers
+adhere to the HTTP standard. 
