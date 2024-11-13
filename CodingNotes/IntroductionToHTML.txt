@@ -1,0 +1,83 @@
+HYPERTEXT MARKUP LANGUAGE, or HTML, is a standard for organizing the content and structure of a web page. 
+
+The browser's job is the render, or convert, the markup language into content a human wants to look at. 
+
+
+STRUCTURE OF AN HTML DOCUMENT 
+The basic structure of an HTML document can be visualized as a tree. This is referred to as the Document Object Model, and it is critical to how browers render and how the code
+we write interacts with HTML. An HTML document starts with a DOCTYPE declaration.
+
+The specifications for HTML have evolved, and the DOCTYPE declaration lets a client know what version of the standard it should target. Currently, we are on version 5, which is 
+referred to as simply html. When we create a new HTML file, the first line will usually look like this:
+
+<!DOCTYPE html>
+
+
+HTML HEAD AND BODY 
+Once the doctype is set, we must create some elements. You will sometimes hear elements referred to as tags. The elements are what we use to define the structure of the document and 
+hold our content. Every element must have an opening tag, and most have closing tags. 
+
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+</html>
+
+The HTML element is often called the document's root because all other elements are nested. 
+
+The head of an HTML document is where we put information about the document. These things can be a title element determining what text goes at the top of the browser and in the tab or a 
+meta element, short for metadata, that tells the browser what character set the content is in for rendering. It can also link other files, like CSS or JavaScript, to the document.
+
+<head>
+    <meta charset="utf-8">
+    <title>My Awesome Webpage</title>
+</head>
+
+Notice how the <html>, <head>, and <body> tags have both opening and closing tags. In HTML, elements with closing tags use the same element name but prefer it with a front-slash character / 
+to close it. The meta taag does not require a closing tag. 
+
+<body>
+    <h1>Welcome! </h1>
+    <p>It's going to be <strong>awesome</strong> teaching you the basics!</p>
+    <p>If you need help, you should join our <a href="someurl.com" target="_blank"> discord/<a> server.</p>
+</body>
+
+Nested inside the body tag, we have a <h1> tag, the first level heading, similiar to what you see in words processors like Google Docs. It is followed by two <p> tags, which indicate
+paragraphs. Inside the paragraphs, we have a <strong> tag, which can apply bold effects to text, and an <aA> tag, an anchor, allowing us to add a hyperlink to anaother resources.
+
+
+ELEMENT ATTRIBUTES
+Some elements can have additional information added to them. This is always done in the opening tag and is referred to as an attribute. Usually, attributes assign values using an equal sign, 
+but not always.  The element attribute lang, tells the browser what language the content is in. The meta tag has an attribute named charset, which is assign a value of utf-8.
+
+Our anchor tag has two attritbutes. First, href, allows us to provide a path to another resource. If it is just a file name, it will look for the resource in the same directory. 
+The target attribute allows us to specify where we would like the result of the link to be rendered.
+The _blank value indicates we want the link to open in a new tab or window. 
+
+Attributes are not content but can impact how content is rendered.
+
+
+DOCUMENT OBJECT MODEL 
+The Document Object Model, or DOM, is a programming interface used so that programs can interact with an HTML document and change its structure, style, and content.
+The DOM resembles and upside-down tree, with the HTML element at the root and the other elements nester according to their position in the document. This allows code to navigate the tree,
+access an individual element, and easily find the element it is nested in (the parent element) and elements nested in it (child elements). It is correct to say that the body tag's parent
+is the HTML tag. It is also correct to say its children are the h1 and two paragraph tags. 
+
+
+WHITE SPACE AND CASE SENSITIVITY
+HTML is not white space or case-sensitive. Most professional developers use lowercase because typing on a keyboard is generally faster. However, it is more important that you be consistent 
+in your formatting. Any white space outside of tags is ignored. Thus, you can feel free to add extra vertical spacing between tags and indent tags for readability.
+
+
+LEAVING COMMENTS
+Sometimes, developers like to leave comments in files to give hints and information to other developers. In HTML, we use <!-- to start a comment and --> to end a comment. 
+Comments have no impact on a web page's rendering. They will be viewable in the HTML file's source but will not be displayed to the user.
+
+<!-- This is a comment. It will not impact rendering. -->
+
+
+
