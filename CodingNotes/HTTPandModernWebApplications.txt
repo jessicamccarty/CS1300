@@ -1,0 +1,104 @@
+HTTP is an acronym for [HyperText Transfer Protocol]. They keywork there is TEXT. HTTP defines a specific format for sending requests and receiving responses as formatted text. HTTP also
+defines extra information that can be attached to requets and responses, such as what type of action the client wants the server to perform (verbs) and what the overall result of that 
+request was in the response (status code).
+
+CLIENT REQUEST
+The header contains an HTTP Verb, GET, and a slash /. The solitary slash means root which is traditionally the home page on websites. This part of the request is called the path. 
+The path identifies a specific resource that your request wants to access. In web applications, a resource refers to a web page, file, data, or anything a server might send to a client.
+
+Below the verb and path, you see the host. The host is the domain that lets DNS and internet routing get your request to the right place. If the target erver isn't registered in DNS, 
+the host could also be an IP address. 
+
+Below the host, are other headers that help a server process a request. Accept-Language is an example of aheader that tells the server what language you want the content to be in. 
+
+REQUEST VERBS
+Every request has a verb, also known as HTTP methods. These instruct the server as to what type of request is being sent. The most commonly used are:
+GET: Used to request a resource from a server. This is probably the most common HTTP  method as it is used anytime to request and resource (web page, image, file, etc.) from a server.
+     It does not use the body to send information and instead relies on the path.
+POST: When a request contains new information, like creating a new record, the POST method will be used. POST sends its data in the request body formatted in a specific way, such as
+      JSON.
+PUT: The PUT method behaves similarly to POST, except that it updates information instead of inserting new information. Some older web application frameworks do not support PUT and use POST
+     for all data submissions, but this is less common today.
+DELETE: Requests that a server remove a resource or data. It is common to specify the ID as part of the path.
+
+SERVER RESPONSE 
+When the request reaches the server, the server processes it and sends a response. This response adds information for the client to the header. 
+
+The next line in the header is the content-type. If it's text/html, the client knows it's a webp page and should render accordingly. It might also be application/pdf, which will open in the
+browser. Another type is application/json, commonly used by APIs to send data to clients.
+
+RESPONSE CODES
+100: The 100 block is the informational block. These are not errors but are used when processing is delayed or long-running. This enables the client to see if the request is still
+     being processed.
+200: The 200 block is what we usually want to see on a client because it indicates things worked properly. 200 OK is the most common status code, but others exist for specific situations,
+     like the 201 CREATED response sent when a clietn posts new data.
+300: The 300 block redirects a client requesting a specific resource path to a new one. A common example of this is when a resource is moved. Clients with the old path can receive a redirect
+     to the new one.
+400: The 400 block means that the client did something wrong. This could be invalid data, not filling in required fields, or even security issues like trying to access a page without logging
+     in. These usually contain additional information in the body about what went wrong specifically so the client can resubmit a valid request. The most common example is the 404 NOTE FOUND
+     status code, used when a client requests a path that does not exist.
+500: The 500 block means an error occured on the server. This error code means it is not the client's fault. A client can not do anything about these errors, and developers typically hide
+     much of the information becauase leaking specific error messages and application information to the public is a security risk.
+
+TEXT PROCESSING AND SECURITY 
+Part of the appeal of HTTP is that text is easy for humans to process. When packets are sent over TCP/IP through the global network, if they aren't encrypted, anyone with access can read
+the information and steal your data, like passwords and payment information. This is the difference between HTTP and HTTPS. The S is the encrypted version, which uses Secure Sockets Layer,
+or SSL for short, to encrypt and decrypt the packets.
+
+TYPES OF WEB APPLICATIONS 
+In general, you can divide resources in two types. STATIC RESOURCES are those that are the same for everyone. For example, a series of pages for a local restaurant. They might have a home 
+page, a menu page, and a contact page. Every client that requests their web pages will get the same resources. Web server applications can also create DYNAMIC RESOURCES with modifications 
+based on the client that requested it. When you log in to your bank's portal, you give it your username and password. When you do a GET request for your account summary screen, the server 
+will look up the account information specific to you. The layout and structure will be the same for all users, but parts of the content would be dynamically generated based on who is logged in.
+
+WEBSITES 
+A website application is hosted on a server and provides static and dynamic resources. These sites are viewable on a browser. The most common responses from website servers are HTML pages.
+HTML is an acronym for HyperTest Markup Language. This syntax is used to organize content on the apge. An HTML document may reference CSS or Cascaading Style Sheet files that can alter the
+pages visual look. Javascript is a program we can use to make HTML elements interactive. 
+
+WEB APIs
+Application Programming Interfaces, or APIs, are web applications that send and receive data using HTTP requests and responses. Unlike websites, the content is not typically HTML. 
+Instead, it is data usually formatted in JSON, which is short for JavaScript Object Notation. JSON is a popular format for data because of JavaScript's popularity on the web, but any 
+language can read anda process JSON data because it is just text.
+
+Web APIs send and receive data like this for a few real-world scenarios:
+1. Exposing data to external applications: Organizations can expose their APIs so that others can use their data. Examples are API services by payment providers which allow others to use
+their APIs to run payments through their applications.
+2. Exposing data to non-server applications: In the website model, the server often has access to the databases and data directly, but when you have applications that exist on client, like
+mobile devices or SPA, they will often communicate with servers via APIs.
+3. Exposing data to internal applications: It's common for organizations to have serveral different versions of their application. Rather than duplicate code, moving some funtionality
+to Web APIs to be shared by those applications can save time and effort.
+
+Web API applications are hosted on servers and are usually built using a programming language and some frameworks. Here are some:
+C#: ASP .NET 
+Java: Spring
+JavaScript: NodeJS, Bun
+Python: Django, Flask
+PHP: Laravel
+Ruby: Ruby on Rails
+
+CONTENT MANAGEMENT SYSTEMS  
+A content management system, or CMS for short, is software that sets up a server to host websites and, in some cases, API data. (ex. Wordpress, WIX)
+
+SINGLE PAGE APPLICATIONS 
+Single Page Applications, or SPA for short, perform their initial request to receive a web page application from the server. Unlike websites, these applications use JavaScript to send and 
+receive data and content to the server primarily by communicating with Web APIs and updating what is displayed to the user on the client. Structurally, these are similar but more complicated than
+the abovementioned dynamic resources becausae instead of the server sending aall of the information down in one custom response to the user, SPA applications continue to make requests and 
+process responses using code. (ex. Gmail, Office 365)
+
+Organizationis build SPA applications because they only have to update small parts of the page. In a traditional website application, when you navigate to a new page, your browser requests
+and loads a full page. SPA applications feel more like applications you would run on your phone or desktop, which improves builtt methods for creating SPA apps.
+
+MOBILE APPLICATIONS 
+Every mobile apaplication sends and receives data via Web APIs. There are two ways to approach mobile applications:
+NATIVE is what we call it when you build an applicatioin to be installed on the device using the software tools provided by Apple and Google. You have Android Studio for Google and typically
+build the apps using Java or Kotlin. For Apple, you can use XCode with Objective-C or Swift.
+CROSS PLATFORM is what we call frameworks that allow you to write shared code for use on both iOS and Android. With the native approach, your application needs to be written twice, but with 
+the cross-platform approach, you can write it once and deploy it to both systems. There are many choices for cross-platform mobile development, including React Native (for JavaScript), .NET
+MAUI (for C#), and Flutter (for Dart).
+
+Cross-platform development is good for reuse, has quicker and cheaper development time, and is used for shared maintenance. Native apps however generally perform better, so if you are 
+creating an intensive application like a game, native apples will be better. IOS and Android do not share some features and functionality. They are also adding new features frequently, 
+which can limit and complicate creating an application that works on both systems.
+
+
