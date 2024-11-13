@@ -1,0 +1,34 @@
+DEVELOPER TOOLS
+To open, click the three dots in the upper right corner of Chrome, hover over More Tools, and click on Developer Tools.
+Alternativaly, press Ctrl + Shift + I to open them on Windows. 
+
+ELEMENTS TAB
+The elements tab will display information about the current content of the webpage. The tab is divided into two sections: HTML and CSS.
+The HTML section shows the document's structure by displaying the elements and their children in a visual node-like structure. The tab starts with an <html> element that is the root
+of the document. The CSS section places information the visual styles, layouts, and other parts that impact how the HTML content appears on the page. 
+The browser renders style and element information to be displayed to the user. When we select and element in the Styles tab, we can modify its style values, which are reflected on the page.
+
+INSPECT ELEMENT 
+In the upper left of the developer tools tab is the inspect element button. After clicking this button, hover over any element on the webpage. The tool will display some information about
+the element and highlight it in the HTML section of the Elements tab. 
+
+MOBILE RESPONSIVE 
+The mobile response button is to the right of the inspect element button. This button allows us to investigate what the current webpage looks like when viewed on a smaller screen, 
+such as a phone or tablet. We can click the down arrow next to the "Dimensions:Responsive" text in the menu bar above the page. This menu bar lets us see the rendering for specific 
+devices and manufacturers. Alternatively, we can set the screen dimensions manually by changing the numbers in the input boxes. All values are in pixels.
+Alongside this, if we click on the 100% dropdown, we can zoom in or out of the webpage.  To leave this view, toggle the responsive button.
+
+CONSOLE 
+To the right of the Elements tab is the Console tab, also known as the browser console. The browser console has several functions. It displays any errors or warnings that may be occurring on 
+the webpage. It also gives us a command prompt to type in JavaScript code into the console and execute these commands to test what will happen on a given page.
+The current URL will be displayed in the console window. This feature allows us to write code directly against web pages.
+
+SOURCES
+To the right of the console is the Sources tab. This tab will show us what assets have been utilized on this webpage. Website assets are digital files and resources used on a particular 
+webpage. Assets include images, videos, JavaScript, and CSS stylesheets. Web pages can reference assets downloaded separately from the page and then included.
+
+NETWORK 
+To the right of the sources tab is the Network tab. This tab lists all HTTP requests made on the webpage. By default, if we open this tab after loading the page, we will see a few requests 
+(if any) listed. Keep the developer tools open and reload the page to see all requests. We should now see all HTTP requests on the page. When a web page is rendered, any referenced assets 
+are downloaded separately over the network to assemble into the finished page. The network tab will show the request for each of these assets. If a page uses JavaScript to fetch data and make
+real-time updates, those requests will appear in the Network panel.
