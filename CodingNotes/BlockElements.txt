@@ -1,0 +1,111 @@
+BLOCK ELEMENTS 
+
+A block element takes up all the horizontal space in its position and pushes other content down to the next line.
+
+An inline element only takes up as much space as its content, and other inline elements will appear on the same horizontal line if there is space.
+
+VISUAL BLOCK ELEMENTS 
+
+HEADINGS
+There are six levels of headings available in HTML documents specified by the letter H and the associated number. They a re specific from 1, the largest, to 6, the smallest. They area intended
+to be hierarchically and  the <h1> element should only appear once on a page. 
+
+The size of the heading impacts the  size of the text. This is based on your browser's default size and boldness without CSS.
+
+PARAGRAPHS 
+The paragraph <p> element is used to separate paragraphs of text. By default, browsers will add vertical space between paragraphs to separate the content and make it easier to read. 
+
+LISTS 
+You can choose unordered (bullet points) or ordered (numberic) lists. Use ordered lists when the order is important, like a list of steps to take, anad unordered lists when the order is not
+important, like a list of sandwhiches on a menu.
+
+An unordered list uses the <ul> element and contains one-to-many list items, <li> elements:
+
+<p>Unordered List:</p>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+The ordered list is structured the same, except with the <ol> element instead:
+
+<p>Ordered List:</p>
+<ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ol>
+
+You can create sub-items in lists by nesting another list element.
+
+Anaother less frequently used list is the description list, which uses the <dl> description list, <dt> description term, and <dd> description details elements. This can be used if you need
+a dictioonary or glossary-type layout. 
+
+<dl>
+    <dt>&lt;p&gt;</dt>
+    <dd>Paragraph Element</dd>
+
+    <dt><dt>&lt;ul&gt;</dt></dt>
+    <dd>Unordered list element</dd>
+</dl>
+
+HTML ENTITIES 
+Use entity codes in order for your browser to understand that you don't want to render a literal paragraph, list, etc. They will treat these codes as part of the content. The formal syntax
+for an HTML entity starts with an ampersand (&) folowd by a name or a number and ends with a semicolon (;).
+
+&lt;	<	    less-than
+&gt;	>	    greater-than
+&amp	&	    ampersand
+&quot	"	    double quotation marks
+&apos;	'	    apostrophe
+&nbsp;	****	non-breaking space character, useful when rendering multiple spaces in sequence in content
+&copy;	©	    copyright symbol
+
+
+PREFORMMATED 
+The <pre> element in HTML is used to display preformmated text. Because HTML does not care about white space, the preformmated element is used when you want content to be displayed exactly as 
+written, which includes spaces, line breaks, and indentation. This is usually used for displaying code snippets or other content where exact formatting is important. 
+
+BLOCK QUOTATION 
+The <blockquote> element is used for quotations. The defaualt browser style indents blockquote content.
+
+FIGURES AND CAPTIONS 
+The <figure> element is used to group self-contained content with an option <figcaption> so you can reference the figure and its caption as a single unit using CSS or JavaScript. 
+A figure could contain an image, quote, code, or a poem. 
+
+FIELDSETS 
+The <fieldset> element is typically used to group related input elements such as checkboxes or radio buttons. You can also nest a <legend> element in a field set to provide a caption.
+
+TABLES AND FORMS
+HTML supportst tables displaying data in tabular format and forms that allow clients to submit data to servers.
+
+
+ORGANIZATIONAL BLOCK ELEMENTS
+The HTML division <div> element is a generic block-level container most frequently used for grouping related content. It does not affect the conent or layout unless styled by CSS. 
+This element is used with CSS and JavaScript to create advanced layouts and interactions like multiple columns and newspaper/blog style layouts and apply them to children (font, color,
+background, borders, etc.).
+
+<div id="main">
+    <h2>Welcome to Our Website!</h2>
+    <p>This is a section of content grouped by a div.
+        It includes a heading and some text.
+        The div helps us interact with this section as a unit.</p>
+</div>
+
+In our example, we used a new attribute. The id attribute allows us to assign a unique name to an HTML element.
+
+SEMANTIC ELEMENTS (HTML 5)
+In the previous <div> code snippet, we assigned it an ID of "main". IDs like "main", "nav", "footer", and others were very commonly applied to <div> elements on pages before HTML5. 
+They were so common that when HTML5 was released, the standards body added some additional HTML elements so that designers could use tags to improve readability, accessibility, 
+and search engine optimization. Here is a list of common semantic elements:
+
+Element     Usage
+<header>	The heading (usually with <h1> element) content for a page.
+<main>	    The main content for a page.
+<section>	A general page section (you may have several of these to separate specific types of content; think 2nd and 3rd-level heading content).
+<article>	A composition like an article in a newspaper or a blog post.
+<nav>	    A page area containing navigation links, usually near the top of the page or in a sidebar.
+<aside>	    A sidebar containing content related to other content that is near.
+<address>	A block containing contact information.
+<footer>	The footer for the page.
