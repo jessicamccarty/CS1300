@@ -1,0 +1,124 @@
+INLINE ELEMENTS
+Inline elements do not alter the flow of content by adding new lines after the closing tag. 
+
+ANCHOR ELEMENTS 
+The HTML anchor <a> element (sometimes called the hyperlink element) creates a link to another resource, whether a web page, file, email address, or even a location on the same page. 
+This tag uses several attributes to do its job, but the two most common are href and target.
+
+HREF ATTRIBUTE 
+The href attribute stores information on what the hyperlink points to. Most often, this is a URL, but it cana be a telephone number or email address.
+
+<a href="https://www.google.com">Search Google</a>
+<a href="tel: 867-5309">Call Jenny</a>
+<a href="mailto:jenny@xyz.com">Email Jenny</a>
+
+The mailto: prefix can be customized further by adding query string information. A query string staarts with a '?' character and is follow by a key-value pairs of information. A key-value
+pair is often formatted asa key=value where th key is a unique name, and the value is data associated with the name.
+
+<a href="mailto:jenny@xyz.com?subject=Hello%20from%20Atlas&bcc=admin@xyz.com">Email Jenny with Subject</a>
+
+Spaces and some special characters are not alalowed in query string values. A space is represented in a query string by %20. The most frequently used query string keys with mailto are 
+subject, cc, bcc, and body. When a usesr clicks a mailto link, it will open in their default email client and pre-fill the query string values.
+
+NAVIGATING WITHIN A PAGE 
+The href attribute can also target an element within the same page, which can be useful for longer pages to jump to specific content. You do this by applying an id attribute to the target 
+element and adding a leading hashtag (#) to the href.
+
+<a href="#section2">Jump to section 2</a>
+
+<h2 id="section2">This is section 2</h2>
+
+If you want your anchor to return to the top of the page, you can set the href to a value of # or #top.
+
+NAVIGATING WITHIN A SITE 
+There are two ways you can format a href URL. The absolute path specifies the domain and is the full path to the resource, such as https://www.google.com. This is used when we need to 
+reference resources on other domains. If the resource is within our site, we can use the relative path, which is the path relative to the resource we are currently in.
+
+For example, imagine our website has a folder structure like this:
+
+/ (root)
+	index.html
+	about/ (folder)
+		contactus.html
+
+The relative path from index.html to contactus.html would be about/contactus.html. Conversely, if we wanted to link to the index.html file from the contactus.html file, the relative path 
+would be ../index.html. The ../ notation means to navigate up a folder level. Here is what a link to the index page would look like from the Contact Us page:
+
+<a href="../index.html">Home</a>
+
+TARGET ATTRIBUTE 
+The target attribute can have several values:
+
+_self - Opens the link in the current view. (This is the default behavior and is rarely specified)
+_blank - Opens the link in a new tab or window, depending on the user's settings.
+_parent - If the current view is nested inside a frame, the content will open the parent frame. Frames are covered below.
+_top - The content will open in the topmost view if clicked within a frame. Deeply nested frames are rarely used.
+The _parent and _top values are rarely used. However, opening a link in a new tab or window is fairly common:
+
+<a href= "http://www.google.com" target="_blank">Google's website</a>
+
+STRONG AND BOLD 
+The <strong> element indicates that its contents have strong importance. By default, this content is usually displayed in bold type. Strong should be reserved for warnings or important labels; 
+it has special meaning for accessibility and screen readers. Screen readers sometimes read strong text in a different tone of voice.
+
+<p>Thank you for purchasing the acme-co clothing iron!
+	<strong>Warning! Do not iron clothes on your body!</strong>
+</p>
+
+A confusing thing to new web developers is that another tag, <b>, draws attention to content and is bolded by default in most browsers. The <b> element is only used for stylistic purposes and 
+does not have the same gravity as <strong>. In general, you should use <strong>.
+
+EMPHASIS AND ITALICS
+Much like <strong> and <b>, the emphasis <em> and italics <i> elements are used differently for semantics versus styling. Emphasis should be used when you want to emphasize a word or phrase:
+
+<p>What did you expect me to do?! I had <em>no choice</em>!</p>
+Italics are used to off-set text from normal prose for readability reasons:
+
+<p>The <i>Nimitz</i> was the lead supercarrier of her class.</p>
+
+Above, we used <i> to indicate that the word Nimitz was the name of a ship, not some strange word you should look up in a dictionary.
+
+SUPERSCRIPT AND SUBSCRIPT 
+Working with formulas? You may want to use the <sub> or <sup> tags to display text as a subscript or superscript:
+
+<p>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> is a formula for glucose.</p>
+<p>2<sup>3</sup> is 8</p>
+
+LINE BREAK 
+To produce a line break (carriage return) in your content, use the <br> element. This can be useful when writing a poem or address, where the division of lines formatting has meaning:
+
+<address>
+	<p> 
+		100 Main St.<br>
+		Suite 204<br>
+		Atlanta, GA 30324
+	</p>
+</address>
+
+CODE 
+One way to show that content is computer code is to wrap it in the <code> element. By default, the content text will be shown in a monospace font, standard in IDEs.
+
+<p>
+	The <code>document.getElementById()</code> method will select an HTML element that is assigned a specific id.
+</p>
+
+If you have larger blocks of formatted code, the <pre> tag can wrap the content, giving more formatting options:
+
+<pre>
+	<code>
+		function helloWorld() {
+			console.log("Hello, world!");
+		}
+	</code>
+</pre>
+
+IFRAMES 
+The inline frame <iframe> element allows you to embed another HTML page into the current one. Incidentally, this is where _top and _parent attributes on links can come into 
+play. An easy example of when you may want to use an inline frame could be to embed a map from another site into a page.
+
+Instead of a href, the iframe uses a src attribute. It supports many other attributes for sizing, borders, margins, scrolling, etc.
+
+SPAN 
+The <span> element is the inline equivalent of the <div> element. On its own, it has no impact on the content it contains. It is frequently used in conjunction with CSS classes to 
+style content elements.
+
